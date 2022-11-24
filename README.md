@@ -128,7 +128,7 @@ The fixtures also contain a set of test data to demonstrate the operation of the
 ```sh
 export APP_VERSION=v1.0.0
 docker build -t ghcr.io/${GITHUB_USERNAME}/package-management:${APP_VERSION} .
-docker push ghcr.io/${GITHUB_USERNAME}/package-management:${BOT_VERSION}
+docker push ghcr.io/${GITHUB_USERNAME}/package-management:${APP_VERSION}
 ```
 
 ## Documentation

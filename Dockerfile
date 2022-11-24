@@ -2,6 +2,7 @@ FROM almalinux:9.1
 
 ### Labels ###
 LABEL org.opencontainers.image.source https://github.com/obervinov/package-management
+LABEL org.opencontainers.image.description "This project was created as an auxiliary tool for the support team. Its purpose is to display a table with the current version of installed packages, as well as display the newest versions available in yum repositories."
 
 ### Environment variables ###
 ENV LANG=en_US.UTF-8

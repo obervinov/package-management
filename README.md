@@ -10,7 +10,8 @@
 ## <img src="https://github.com/obervinov/content/blob/main/ico/1945958.png" width="25" title="about"> About this project
 **p.s. This is one of my first python projects, created back in 2020. Please do not judge strictly.**<br></br>
 This project was created as an auxiliary tool for the support team.
-Its purpose is to display a table with the current version of installed packages, as well as display the newest versions available in yum repositories.<br></br>
+Its purpose is to display a table with the current version of installed packages, as well as display the newest versions available in yum repositories.
+
 Main functions:
  - Adding new elements to track the current version of the package and the latest one available in yum (one by one or a list).
  - Adding your repositories for tracking in yum.
@@ -18,52 +19,6 @@ Main functions:
 
 <p align="center">
   <img src="doc/main.png" width="1000" title="main">
-</p><br></br>
-
-
-### Tracking the current versions of packages installed on the servers of the selected environment
-<p align="center">
-  <img src="doc/package-management_packages-list.gif" width="1000" title="packages-list">
-</p><br></br>
-
-### Add a new tracking package
-<p align="center">
-  <img src="doc/package-management_add-package.gif" width="1000" title="add-package">
-</p><br></br>
-
-### Tabs with different server environments
-<p align="center">
-  <img src="doc/package-management_tabs.gif" width="1000" title="tabs">
-</p><br></br>
-
-### Search for the latest versions of packages in yum repositories
-<p align="center">
-  <img src="doc/package-management_find-new-version.gif" width="1000" title="find-new-version">
-</p><br></br>
-
-### If information about packages could not be found in the standard yum repositories, you can add additional repositories through a special section
-<p align="center">
-  <img src="doc/package-management_add-repository.gif width="1000" title="add-repository">
-</p><br></br>
-
-### Update the current version of the package to the newest one available in the yum repository (one package at a time)
-<p align="center">
-  <img src="doc/package-management_updating-version_once.gif width="1000" title="updating-version_once">
-</p><br></br>
-
-### Update the current version of the package to the newest one available in the yum repository (all packages in the selected environment at once)
-<p align="center">
-  <img src="doc/package-management_updating-version_all.gif width="1000" title="updating-version_all">
-</p><br></br>
-
-### Get a list of packages with the currently installed version to the clipboard
-<p align="center">
-  <img src="doc/package-management_hashstring.gif width="1000" title="hashstring">
-</p><br></br>
-
-### Importing packages in a list to the table of the selected environment
-<p align="center">
-  <img src="doc/package-management_import.gif width="1000" title="import">
 </p><br></br>
 
 ## <img src="https://github.com/obervinov/content/blob/main/ico/7711245.png" width="25" title="map"> Repository map
@@ -175,3 +130,49 @@ export APP_VERSION=v1.0.0
 docker build -t ghcr.io/${GITHUB_USERNAME}/package-management:${APP_VERSION} .
 docker push ghcr.io/${GITHUB_USERNAME}/package-management:${BOT_VERSION}
 ```
+
+## Documentation
+### Tracking the current versions of packages installed on the servers of the selected environment
+<p align="left">
+  <img src="doc/package-management_packages-list.gif" width="800" title="packages-list">
+</p>
+
+### Add a new tracking package
+<p align="left">
+  <img src="doc/package-management_add-package.gif" width="800" title="add-package">
+</p>
+
+### Tabs with different server environments
+<p align="left">
+  <img src="doc/package-management_tabs.gif" width="800" title="tabs">
+</p>
+
+### Search for the latest versions of packages in yum repositories
+<p align="left">
+  <img src="doc/package-management_find-new-version.gif" width="800" title="find-new-version">
+</p>
+
+### If information about packages could not be found in the standard yum repositories, you can add additional repositories through a special section
+<p align="left">
+  <img src="doc/package-management_add-repository.gif" width="800" title="add-repository">
+</p>
+
+### Update the current version of the package to the newest one available in the yum repository (one package at a time)
+<p align="left">
+  <img src="doc/package-management_updating-version_once.gif" width="800" title="updating-version_once">
+</p>
+
+### Update the current version of the package to the newest one available in the yum repository (all packages in the selected environment at once)
+<p align="left">
+  <img src="doc/package-management_updating-version_all.gif" width="800" title="updating-version_all">
+</p>
+
+### Get a list of packages with the currently installed version to the clipboard
+<p align="left">
+  <img src="doc/package-management_hashstring.gif" width="800" title="hashstring">
+</p>
+
+### Importing packages in a list to the table of the selected environment
+<p align="left">
+  <img src="doc/package-management_import.gif" width="800" title="import">
+</p>

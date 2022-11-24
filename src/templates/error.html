@@ -1,0 +1,35 @@
+ <head>
+  <meta charset="utf-8">
+  <title>ERROR PAGE</title>
+   {% include 'link_href.html' %}
+ </head>
+<body>
+	{% include 'header.html' %}
+	{% block content %}
+		<div class="textarea_error" align="center">
+            <p>ERROR</p>
+			{% if error_type == "rpmurl" %}
+				<p>RPM package with URL <b><u>{{_rpmurl}}</u></b> already exsist.</p>
+				<input type="button" class="button3" value="Go Back!" onclick="history.back(-1)" />			
+			{% elif error_type == "repo_name" %}
+				<p>Yum repo.d with name <b><u>{{_repo_name}}</u></b> already exsist.</p>
+				<input type="button" class="button3" value="Go Back!" onclick="history.back(-1)" />
+			{% elif error_type == "package_name" %}
+				<p>Package with name <b><u>{{_repo_name}}</u></b> already exsist.</p>
+				<input type="button" class="button3" value="Go Back!" onclick="history.back(-1)" />
+			{% elif error_type == "import_env" %}
+				<p>Envermoment value in selcted list not set.</p>
+				<div><img src="../static/import_env_error.png" width="800" height="200" align="center" border="3" hspace="10" vspace="10" /></div>
+				<input type="button" class="button3" value="Go Back!" onclick="history.back(-1)" />
+			{% else %}
+				<div><p>Когда что-то пошло не так...</p></div>
+				<div><img src="../static/wat_error.jpg" width="320" height="220" align="center" border="3" hspace="10" vspace="10" /></div>
+				<div><input type="button" class="button3" value="Go Back!" onclick="history.back(-1)" /></div>
+				<div style="font-size:14px"><p>p.s. неверняка в строке сейчас странный url, для которого нету роута, надо дебажить...</p></div>
+			{% endif %}
+            <p></p>
+            <p></p>
+		</div>
+	{% endblock %}
+	{% include 'footer.html' %}
+</body>

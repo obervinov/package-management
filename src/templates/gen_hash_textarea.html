@@ -1,0 +1,34 @@
+{% if gen_hash_block == "SHOW" %}
+		<script>
+			function popupCopyClipboard() {
+				var popup = document.getElementById("popup_hash_textarea");
+				popup.classList.toggle("show2");
+			}
+            function copyClipboard() {
+                var copyText = document.getElementById("hash_text_box");
+                copyText.select();
+                copyText.setSelectionRange(0, 99999);
+                document.execCommand("copy");
+            }
+		</script>
+        <div class="popup2" onclick="popupCopyClipboard();copyClipboard();">
+            <div class="table-wrapper-gen-hash">
+                <table>
+                    <tbody>
+                        <tr>
+                            {% if env == "prod" %}
+                                <td><pre><textarea class="textarea2" maxlenght="255" rows="3" cols="100" name="hash_text_box" id="hash_text_box" readonly>{{hash_string_prod}}</textarea></pre></td>
+                            {% elif env == "qa" %}
+                                <td><pre><textarea class="textarea2" maxlenght="255" rows="3" cols="100" name="hash_text_box" id="hash_text_box" readonly>{{hash_string_qa}}</textarea></pre></td>
+                            {% elif env == "dev" %}
+                                <td><pre><textarea class="textarea2" maxlenght="255" rows="3" cols="100" name="hash_text_box" id="hash_text_box" readonly>{{hash_string_dev}}</textarea></pre></td>
+                            {% endif %}                            
+                            <td>
+                                <span class="popuptext2" id="popup_hash_textarea">Сopied to clipboard!</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div> 
+{% endif %}

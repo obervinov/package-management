@@ -1,0 +1,64 @@
+ <head>
+  <meta charset="utf-8">
+  <title>Repositories list</title>
+    {% include 'link_href.html' %}  
+ </head>
+<body>
+	{% include 'header.html' %}
+	{% block content %}
+		{% include 'buttons.html' %}
+			<div class="tabs">
+				<input id="tab1" type="radio" name="tabs" value ="yum" {% if add_rpm_enabled != "true" %}checked {% endif %}>
+				<label for="tab1" title="yum.repos.d content">Content yum.repos.d</label>
+
+				<input id="tab2" type="radio" name="tabs" value="rpm"{% if add_rpm_enabled == "true" %}checked {% endif %}>
+				<label for="tab2" title="wget rpm package">Url RPM package</label>
+
+				<section id="content-tab1">
+					<div class="table-wrapper">
+						<table class="fl-table">
+							{% include 'repo_yum_list.html' %}
+							{% if add_yum_enabled == "true" %}
+							<tbody>
+								<form id="add_yum" action="/repository" method="POST">
+									<tr style="background-color: aliceblue">
+										<td>-</td>
+										<td><p><textarea class="textarea" style="font-size: 11pt" maxlenght="25" rows="1" cols="25" name="text_repo_name" required autofocus></textarea></p></td>
+										<td><p><textarea class="textarea" style="font-size: 10pt" maxlenght="255" rows="5" cols="80" name="text_repo_content" required></textarea></p></td>
+										<td><button type="submit" class="button_save" name="submit" value="add_yum">Save</button></td>
+									</form>
+									<form action="/repository" method="GET">
+										<td><button type="submit" class="button_cancel" value="cancel">Cancel</button></td>
+									</form>
+									</tr>
+							</tbody>
+						    {% endif %}
+						</table>
+					</div>
+				</section>  
+				<section id="content-tab2">
+					<div class="table-wrapper">
+						<table class="fl-table">				
+							{% include 'repo_rpm_list.html' %}
+							{% if add_rpm_enabled == "true" %}
+								<tbody>
+									<form id="add_rpm" action="/repository" method="POST">
+										<tr style="background-color: aliceblue">
+											<td>-</td>
+											<td><p><textarea class="textarea" style="font-size: 11pt" maxlenght="25" rows="1" cols="25" name="text_rpm_name" required autofocus></textarea></p></td>
+											<td><p><textarea class="textarea" style="font-size: 10pt" maxlenght="255" rows="1" cols="80" name="text_rpmurl" required></textarea></p></td>
+											<td><button type="submit" class="button_save" name="submit" value="add_rpm">Save</button></td>
+										</form>
+										<form action="/repository" method="GET">
+											<td><button type="submit" class="button_cancel" value="cancel">Cancel</button></td>
+										</form>															
+										</tr>
+								</tbody>
+							{% endif %}
+						</table>							
+				</section>
+			</div>
+	{% include 'button_up.html' %}			
+	{% endblock %}
+	{% include 'footer.html' %}
+</body>

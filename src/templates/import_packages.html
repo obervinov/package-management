@@ -1,0 +1,67 @@
+ <head>
+  <meta charset="utf-8">
+  <title>Import Packages by list</title>
+   {% include 'link_href.html' %}
+ </head>
+<body>
+	{% include 'header.html' %}
+	{% block content %}
+		<form action="/packages" method="GET">
+			{% include 'buttons.html' %}
+		</form>
+        <h2 style="color: black; padding: 30px 0; text-align:left; margin-left: 4%">Import packages per HASH string</h2>
+        <form action="/import" method="POST">
+            <table>
+                {% if textarea_stdout == "show" %}
+                {% for item in stdout %}
+                    <tr>
+                        <td colspan="2" align="left">
+                            <textarea class="textarea" style="font-size:11pt; margin-left:5%{% if "exist" in item %}; color:darkorange{% else %}; color:rgb(0, 252, 42){% endif %}" maxlenght="255" rows="1" cols="100" readonly>{{item}}</textarea>
+                        </td>
+                    </tr>
+                {% endfor %}
+                {% endif %}
+                <tr>
+                    <td style="width: 210px">
+                        <div class="popup" onmouseover="popupFunctionEnv()">
+                            <div class="selectdiv">
+                            <span class="popuptext" id="popup_import_elements"> Select envermoment for import packages </span>
+                            <label>
+                                <select name="env" required>
+                                    <option selected disabled> Select env </option>
+                                    <option value="prod">PROD</option>
+                                    <option value="qa">QA</option>
+                                    <option value="dev">DEV</option>
+                                </select>
+                            </label>
+                            </div>
+                        </div>
+                        </td>
+                    <td>
+                        <p><textarea class="textarea" style="font-size: 11pt" maxlenght="255" rows="3" cols="80" name="hash_string" required title="Importing pasckages hash string (ex. ['logstash:7.6.2','kibana:7.6.2','nginx:1.16'])"></textarea></p>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <div class="popup" onclick="popup_start_importFunction()">
+                                <button type="submit" class="button_import_packages_hash" name="submit" value="import">Import packages</button>
+                                <span class="popuptext" id="popup_start_import"> Starting import and YUM info version package.</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <script>
+                    function popupFunctionEnv() {
+                        var popup = document.getElementById("popup_import_elements");
+                        popup.classList.toggle("show");
+                    }
+                    function popup_start_importFunction() {
+                        var popup = document.getElementById("popup_start_import");
+                        popup.classList.toggle("show");
+                    }                    
+                </script>
+        </form>
+	{% include 'button_up.html' %}
+	{% endblock %}
+	{% include 'footer.html' %}
+</body>

@@ -1,0 +1,281 @@
+.button_home {
+  background-color: #324960;
+  border: none;
+  color: white;
+  padding: 17px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+.button_gen_hash {
+  background-color: #324960;
+  border: none;
+  color: white;
+  padding: 17px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+.button_check_repo_versions {
+  background-color: #324960;
+  border: none;
+  color: white;
+  padding: 17px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+.button_import_packages {
+  background-color: #324960;
+  border: none;
+  color: white;
+  padding: 17px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+.button_add_package {
+  background-color: #4FC3A1;
+  border: none;
+  color: white;
+  padding: 17px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 ); 
+}
+.button3 {
+  background-color: #4FC3A1;
+  border: none;
+  color: white;
+  padding: 9px 17px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+}
+.button_remove_package {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 4px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+}
+.button_upadte_version {
+  background-color: #4FC3A1;
+  border: none;
+  color: white;
+  padding: 4px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+}
+.button_update_versions_packages {
+  background-color: #4FC3A1;
+  border: none;
+  color: white;
+  padding: 17px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+.button_repositories {
+  background-color: #4FC3A1;
+  border: none;
+  color: white;
+  padding: 17px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+.button7 {
+  background-color: #324960;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-family: fontawesome;
+  margin-left: 3%;
+  cursor: pointer;
+  box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+.button_help {
+  background-color: #4FC3A1;
+  border: none;
+  color: white;
+  padding: 4px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-family: fontawesome;
+  cursor: pointer;
+  box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+.button_import_packages_hash {
+  background-color: #4FC3A1;
+  border: none;
+  color: white;
+  padding: 15px 45px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0px 50px 100px;
+}
+.button10 {
+  background-color: #4FC3A1;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+}
+.button_cancel {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+}
+.button_save {
+  background-color:#4FC3A1;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+}
+.label {
+  color: white;
+  background-color: white;
+  color: black;
+  margin-left: 7%;
+  margin-bottom: 7%;
+}
+.textarea {
+  resize: none;
+}
+.textarea2 {
+  resize: none;
+  font-size: 10pt;
+  border: none;
+  width: 100%;
+  max-width: 100%;
+}
+.textarea_error  {
+    color: red;
+    background-color: white;
+    font-size: 24;
+}
+#button_up {
+  display: inline-block;
+  background-color: #4FC3A1;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 50px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#button_up::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#button_up:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#button_up:active {
+  background-color: #555;
+}
+#button_up.show {
+  opacity: 1;
+  visibility: visible;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}

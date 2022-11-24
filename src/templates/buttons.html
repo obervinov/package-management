@@ -1,0 +1,53 @@
+	<div style="margin-left: 60px" class="table-wrapper-button">
+		<table> 
+			<tr>
+				<td>
+					<a href="/"><div class="button_home">Home</div >
+				</td>
+				<td>
+					<button type="submit" class="button_add_package" name="action" value="add_package">Add new package
+				</td>
+				<td>
+					<div class="popup" onclick="popupFunction_generate_hash()">
+						<button type="submit" class="button_gen_hash" name="action" value="generate_hash">Generating packages string
+						<span class="popuptext" id="popup_generate_hash"> Creating a string with a list of packages for the selected environment - {{env}}</span>
+					</div>
+				</td>
+				<td>
+					<div class="popup" onclick="popup_update_versionFunction()">
+						<button type="submit" class="button_update_versions_packages" name="action" value="update_versions_packages">Updating current versions
+						<span class="popuptext" id="popup_update_version"> Update all current versions from the repository versions for {{env}}</span>
+					</div>
+				</td>
+				<td>
+					<div class="popup" onclick="popup_check_repoFunction()">
+							<button type="submit" class="button_check_repo_versions" name="action" value="check_repo_versions">Finding new versions
+							<span class="popuptext" id="popup_check_repo"> Updating YUM cache and loading package information. This may take some time... </span>
+					</div>
+				</td>
+				<td>
+					<a href="/repository"><button type="button" class="button_repositories">Manage repositories</button>
+				</td>
+				<td>
+					<a href="/import"><button type="button" class="button_import_packages">Import packages</button>
+				</td>
+				<td><a href="https://github.com/obervinov/package-management">
+					<div class="button_help"><p class="fas fa-info-circle"/></div >
+				</td>
+			</tr>
+		</table>	
+	</div>
+	<script>
+		function popup_check_repoFunction() {
+			var popup = document.getElementById("popup_check_repo");
+			popup.classList.toggle("show");
+		}
+		function popup_update_versionFunction() {
+			var popup = document.getElementById("popup_update_version");
+			popup.classList.toggle("show");
+		}
+		function popupFunction_generate_hash() {
+			var popup = document.getElementById("popup_generate_hash");
+			popup.classList.toggle("show");
+		}						
+	</script>

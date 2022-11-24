@@ -1,0 +1,229 @@
+            <div class="tabs">
+                    <input id="tab3" type="radio" name="tabs" value="prod" {% if env == "prod" %} checked {% endif %}>
+                    <label for="tab3" title="ENV Prodaction packages list">ENV Prodaction</label>
+
+                    <input id="tab4" type="radio" name="tabs" value="qa" {% if env == "qa" %} checked {% endif %}>
+                    <label for="tab4" title="Quality Assurance packages list">ENV Quality Assurance</label>
+
+                    <input id="tab5" type="radio" name="tabs" value="dev" {% if env == "dev" %} checked {% endif %}>
+                    <label for="tab5" title="ENV Development packages list">ENV Development</label>
+				<section id="content-tab3">
+                    {% if env == "prod" %}
+                        {% include 'gen_hash_textarea.html' %}
+                    {% endif %}
+					<div class="table-wrapper">
+						<table class="fl-table">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Package Name</th>
+                                <th>Current Version</th>
+                                <th>Version in Repo</th>
+                                <th>Update</th>
+                                <th style="width: 50px">Remove</th>
+                            </tr>
+                            </thead>
+                                {% for item in data_prod %}
+                                    <form action="/packages" method="GET">
+                                        <tbody>
+                                            <tr>
+                                                <td>{{item[0]}}</td>
+                                                <td>{{item[1]}}</td>
+                                                <td>{{item[2]}}</td>
+                                                {% if item[0] in green_list_prod %}					
+                                                    <td><b style="color:rgb(0, 252, 42)";>{{item[3]}}</b></td>
+                                                {% elif item[3] == "not_found" %}
+                                                    <td><p style="color:red";>{{item[3]}}</p></td>
+                                                {% else %}
+                                                    <td>{{item[3]}}</td>
+                                                {% endif %}
+                                                <td>
+                                                        <input type="hidden" name="env" value="prod">
+                                                        <input type="hidden" name="index" value="{{item[0]}}">
+                                                        <input type="hidden" name="new_version" value="{{item[3]}}">
+                                                        <input type="submit" class="button_upadte_version" name="action" value="update_version"/>
+                                                </td>
+                                                <td>
+                                                        <input type="submit" class="button_remove_package" name="action" value="remove_package"/>
+                                                </td>
+                                            </tr>                
+                                        </tbody>
+                                    </form>
+                                {% endfor %}
+                            {% if add_package == "prod" %}
+                                <tbody>
+                                <tr style="background-color: aliceblue">
+                                    <form action="/packages" method="GET">
+                                        <td>-</td>
+                                        <td>
+                                            <p><textarea class="textarea" style="font-size: 12pt" maxlenght="25" rows="1" cols="25" name="text_pack_name" required autofocus></textarea></p>
+                                        </td>
+                                        <td>
+                                            <p><textarea class="textarea" style="font-size: 12pt" maxlenght="7" rows="1" cols="25" name="text_cur_ver" required></textarea></p>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" style="font-size: 10pt" name="checkbox_rep_ver" checked value="search_repo_version">Value will be found automatically
+                                        </td>
+                                        <td>
+                                            <input type="hidden" name="action" value="add_package">
+                                            <input type="hidden" name="tabs" value="prod">                                         
+                                            <input type="submit" class="button_save" name="submit" value="save">
+                                        </td>
+                                    </form>
+                                    <form action="/" method="GET">
+                                        <input type="hidden" name="env" value="prod">
+                                        <td><input type="submit" class="button_cancel" value="cancel"></td>
+                                    </form>                                    
+                                </tr>
+                                </tbody>
+                            {% endif %}                   
+						</table>
+					</div>
+				</section>  
+				<section id="content-tab4">
+                    {% if env == "qa" %}
+                        {% include 'gen_hash_textarea.html' %}
+                    {% endif %}
+					<div class="table-wrapper">
+						<table class="fl-table">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Package Name</th>
+                                <th>Current Version</th>
+                                <th>Version in Repo</th>
+                                <th>Update</th>
+                                <th style="width: 50px">Remove</th>
+                            </tr>
+                            </thead>
+                                {% for item in data_qa %}
+                                    <form action="/packages" method="GET">
+                                        <tbody>
+                                            <tr>
+                                                <td>{{item[0]}}</td>
+                                                <td>{{item[1]}}</td>
+                                                <td>{{item[2]}}</td>
+                                                {% if item[0] in green_list_qa %}					
+                                                    <td><b style="color:rgb(0, 252, 42)";>{{item[3]}}</b></td>
+                                                {% elif item[3] == "not_found" %}
+                                                    <td><p style="color:red";>{{item[3]}}</p></td>
+                                                {% else %}
+                                                    <td>{{item[3]}}</td>
+                                                {% endif %}
+                                                <td>
+                                                        <input type="hidden" name="env" value="qa">
+                                                        <input type="hidden" name="index" value="{{item[0]}}">
+                                                        <input type="hidden" name="new_version" value="{{item[3]}}">
+                                                        <input type="submit" class="button_upadte_version" name="action" value="update_version"/>
+                                                </td>
+                                                <td>
+                                                        <input type="submit" class="button_remove_package" name="action" value="remove_package"/>
+                                                </td>
+                                            </tr>                
+                                        </tbody>
+                                    </form>                                
+                                {% endfor %}
+                            {% if add_package == "qa" %}
+                                <tbody>
+                                <tr style="background-color: aliceblue">
+                                 <form action="/packages" method="GET">
+                                        <td>-</td>
+                                        <td>
+                                            <p><textarea class="textarea" style="font-size: 12pt" maxlenght="25" rows="1" cols="25" name="text_pack_name" required autofocus></textarea></p>
+                                        </td>
+                                        <td>
+                                            <p><textarea class="textarea" style="font-size: 12pt" maxlenght="7" rows="1" cols="25" name="text_cur_ver" required></textarea></p>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" style="font-size: 10pt" name="checkbox_rep_ver" checked value="search_repo_version">Value will be found automatically
+                                        </td>
+                                        <td>
+                                            <input type="hidden" name="action" value="add_package">
+                                            <input type="hidden" name="tabs" value="qa">                                         
+                                            <input type="submit" class="button_save" name="submit" value="save">
+                                        </td>
+                                    </form>
+                                    <form action="/" method="GET">
+                                        <input type="hidden" name="env" value="qa">
+                                        <td><input type="submit" class="button_cancel" value="cancel"></td>
+                                    </form>                                      
+                                </tr>
+                                </tbody>
+                            {% endif %}                             
+						</table>
+					</div>							
+				</section>
+				<section id="content-tab5">
+                    {% if env == "dev" %}
+                        {% include 'gen_hash_textarea.html' %}
+                    {% endif %}
+					<div class="table-wrapper">
+						<table class="fl-table">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Package Name</th>
+                                <th>Current Version</th>
+                                <th>Version in Repo</th>
+                                <th>Update</th>
+                                <th style="width: 50px">Remove</th>
+                            </tr>
+                            </thead>
+                                {% for item in data_dev %}
+                                    <form action="/packages" method="GET">
+                                        <tbody>
+                                            <tr>
+                                                <td>{{item[0]}}</td>
+                                                <td>{{item[1]}}</td>
+                                                <td>{{item[2]}}</td>
+                                                {% if item[0] in green_list_dev %}					
+                                                    <td><b style="color:rgb(0, 252, 42)";>{{item[3]}}</b></td>
+                                                {% elif item[3] == "not_found" %}
+                                                    <td><p style="color:red";>{{item[3]}}</p></td>
+                                                {% else %}
+                                                    <td>{{item[3]}}</td>
+                                                {% endif %}
+                                                <td>
+                                                        <input type="hidden" name="env" value="dev">
+                                                        <input type="hidden" name="index" value="{{item[0]}}">
+                                                        <input type="hidden" name="new_version" value="{{item[3]}}">
+                                                        <input type="submit" class="button_upadte_version" name="action" value="update_version"/>
+                                                </td>
+                                                <td>
+                                                        <input type="submit" class="button_remove_package" name="action" value="remove_package"/>
+                                                </td>
+                                            </tr>                
+                                        </tbody>
+                                    </form>
+                                {% endfor %}
+                            {% if add_package == "dev" %}
+                                <tbody>
+                                <tr style="background-color: aliceblue">
+                                 <form action="/packages" method="GET">
+                                        <td>-</td>
+                                        <td>
+                                            <p><textarea class="textarea" style="font-size: 12pt" maxlenght="25" rows="1" cols="25" name="text_pack_name" required autofocus></textarea></p>
+                                        </td>
+                                        <td>
+                                            <p><textarea class="textarea" style="font-size: 12pt" maxlenght="7" rows="1" cols="25" name="text_cur_ver" required></textarea></p>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" style="font-size: 10pt" name="checkbox_rep_ver" checked value="search_repo_version">Value will be found automatically
+                                        </td>
+                                        <td>
+                                            <input type="hidden" name="action" value="add_package">
+                                            <input type="hidden" name="tabs" value="dev">
+                                            <input type="submit" class="button_save" name="submit" value="save">
+                                        </td>
+                                    </form>
+                                    <form action="/" method="GET">
+                                        <input type="hidden" name="env" value="dev">
+                                        <td><input type="submit" class="button_cancel" value="cancel"></td>
+                                    </form>                                    
+                                </tr>
+                                </tbody>
+                            {% endif %}                           
+						</table>
+					</div>							
+				</section>                
+			</div>

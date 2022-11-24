@@ -1,0 +1,16 @@
+ <head>
+  <meta charset="utf-8">
+  <title>Package List {{APP_VERSION}}</title>
+   {% include 'link_href.html' %}
+ </head>
+<body>
+	{% include 'header.html' %}
+	{% block content %}
+		<form action="/packages" method="GET">
+			{% include 'buttons.html' %}
+			{% include 'package_list.html' %}
+		</form>
+	{% include 'button_up.html' %}
+	{% endblock %}
+	{% include 'footer.html' %}
+</body>

@@ -7,7 +7,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/obervinov/package-management?style=for-the-badge)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/instaloader?style=for-the-badge)
 
-## <img src="https://github.com/obervinov/content/blob/main/ico/1945958.png" width="25" title="about"> About this project
+## <img src="https://github.com/obervinov/_templates/blob/v1.2.2/icons/book.png" width="25" title="about"> About this project
 **p.s. This is one of my first python projects, created back in 2020. Please do not judge strictly.**<br></br>
 This project was created as an auxiliary tool for the support team.
 Its purpose is to display a table with the current version of installed packages, as well as display the newest versions available in yum repositories.
@@ -21,7 +21,7 @@ Main functions:
   <img src="doc/main.png" width="1000" title="main">
 </p><br></br>
 
-## <img src="https://github.com/obervinov/content/blob/main/ico/7711245.png" width="25" title="map"> Repository map
+## <img src="https://github.com/obervinov/_templates/blob/v1.2.2/icons/stack.png" width="25" title="map"> Repository map
 ```sh
 .
 ├── CHANGELOG.md                ### All notable changes to this project will be documented in this file
@@ -76,12 +76,12 @@ Main functions:
         └── repository.html
 ```
 
-## <img src="https://github.com/obervinov/content/blob/main/ico/8823344.png" width="25" title="requirements"> Requirements
-- <img src="https://github.com/obervinov/content/blob/main/ico/postgres.png" width="20" title="postgres-ico"> PostgreSQL - [fixtures](docker-entrypoint-initdb.d/init-db.sh)
-- <img src="https://github.com/obervinov/content/blob/main/ico/centos.png" width="20" title="centos-ico"> Almalinux 9 - [The operating system that this project needs to support](https://hub.docker.com/layers/library/almalinux/9.1/images/sha256-33352d3571a24a86ac08ef0eb7b06f21c189bd4f7087a825169046d9af263991?context=explore)
-- <img src="https://github.com/obervinov/content/blob/main/ico/package_ico.png" width="20" title="yum-ico"> Yum - [Package Manager](https://ru.wikipedia.org/wiki/Yum)
+## <img src="https://github.com/obervinov/_templates/blob/v1.2.2/icons/requirements.png" width="25" title="requirements"> Requirements
+- <img src="https://github.com/obervinov/_templates/blob/v1.2.2/icons/postgres.png" width="20" title="postgres-ico"> PostgreSQL - [fixtures](docker-entrypoint-initdb.d/init-db.sh)
+- <img src="https://github.com/obervinov/_templates/blob/v1.2.2/icons/centos.png" width="20" title="centos-ico"> Almalinux 9 - [The operating system that this project needs to support](https://hub.docker.com/layers/library/almalinux/9.1/images/sha256-33352d3571a24a86ac08ef0eb7b06f21c189bd4f7087a825169046d9af263991?context=explore)
+- <img src="https://github.com/obervinov/_templates/blob/v1.2.2/icons/package_ico.png" width="20" title="yum-ico"> Yum - [Package Manager](https://ru.wikipedia.org/wiki/Yum)
 
-## Environment variables
+## <img src="https://github.com/obervinov/_templates/blob/v1.2.2/icons/build.png" width="25" title="envs"> Environment variables
 
 | Variable  | Description | Default |
 | ------------- | ------------- | ------------- |
@@ -96,7 +96,7 @@ Main functions:
 
 
 
-## <img src="https://github.com/obervinov/content/blob/main/ico/2366710.png" width="25" title="docker"> How to run with docker-compose
+## <img src="https://github.com/obervinov/_templates/blob/v1.2.2/icons/docker.png" width="25" title="docker"> How to run with docker-compose
 1. Building and launching all services with dependencies in docker-compose
 ```sh
 docker-compose up -d
@@ -107,7 +107,7 @@ docker logs -f package-management
 ```
 
 
-## <img src="https://github.com/obervinov/content/blob/main/ico/8840892.png" width="25" title="locally"> Resources
+## <img src="https://github.com/obervinov/_templates/blob/v1.2.2/icons/stack2.png" width="25" title="locally"> Resources
 
 ### DBs viewing in browser
 http://0.0.0.0:8080
@@ -124,7 +124,7 @@ The fixtures configure the postgres database for the operation of the web applic
 
 The fixtures also contain a set of test data to demonstrate the operation of the application.
 
-## <img src="https://github.com/obervinov/content/blob/main/ico/7264022.png" width="25" title="build"> How to build a docker image
+## <img src="https://github.com/obervinov/_templates/blob/v1.2.2/icons/config.png" width="25" title="build"> How to build a docker image
 ```sh
 export APP_VERSION=v1.0.0
 docker build -t ghcr.io/${GITHUB_USERNAME}/package-management:${APP_VERSION} .
